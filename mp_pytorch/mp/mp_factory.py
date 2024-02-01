@@ -86,9 +86,9 @@ class MPFactory:
             phase_gn = ExpDecayPhaseGenerator(tau=tau, delay=delay,
                                               learn_tau=learn_tau,
                                               learn_delay=learn_delay,
-                                              alpha_phase=mp_args[
-                                                  "alpha_phase"],
-                                              dtype=dtype, device=device)
+                                              dtype=dtype, 
+                                              device=device,
+                                              **mp_args)
             basis_gn = NormalizedRBFBasisGenerator(
                 phase_generator=phase_gn,
                 num_basis=num_basis,
@@ -101,9 +101,9 @@ class MPFactory:
             phase_gn = ExpDecayPhaseGenerator(tau=tau, delay=delay,
                                               learn_tau=learn_tau,
                                               learn_delay=learn_delay,
-                                              alpha_phase=mp_args[
-                                                  "alpha_phase"],
-                                              dtype=dtype, device=device)
+                                              dtype=dtype, 
+                                              device=device,
+                                              **mp_args)
             basis_gn = ProDMPBasisGenerator(
                 phase_generator=phase_gn,
                 num_basis=num_basis,
