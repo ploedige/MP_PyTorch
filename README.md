@@ -41,7 +41,29 @@ from mp_pytorch import MPFactory
 ```
 
 &nbsp;
-## Quickstart
+
+## Quickstart Trajectory Encoding / Decoding
+
+```python
+# Create MP Factory
+from mp_pytorch import MPFactory
+
+times: torch.Tensor # timestamps for each trajectory position
+traj: torch.Tensor # trajectory demonstration, e.g. joint positions
+
+
+mp = MPFactory.init_mp(mp_type="pro_dmp", num_dof=3, num_basis=10)
+mp_dict = mp.learn_mp_params_from_trajs(times, trajs)
+
+
+# for probablistic movement primitives, you can also choose to sample trajectories
+samples, samples_vel = mp.sample_trajectories(num_smp=10)
+# alternatively:
+traj, traj_vel = mp.get_trajs()
+
+```
+
+## Advanced Usage
 For further information, please refer to the [User Guide](./doc/README.md).
 
 The main steps to create ProDMPs instance and generate trajectories are as follows:

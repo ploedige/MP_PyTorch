@@ -13,7 +13,8 @@ class NormalizedRBFBasisGenerator(BasisGenerator):
                  basis_bandwidth_factor: int = 3,
                  num_basis_outside: int = 0,
                  dtype: torch.dtype = torch.float32,
-                 device: torch.device = 'cpu'):
+                 device: torch.device = 'cpu',
+                 **kwargs):
         """
         Constructor of class RBF
 
@@ -132,7 +133,8 @@ class ZeroPaddingNormalizedRBFBasisGenerator(NormalizedRBFBasisGenerator):
                  num_basis_zero_goal: int = 0,
                  basis_bandwidth_factor: float = 3,
                  dtype: torch.dtype = torch.float32,
-                 device: torch.device = 'cpu'):
+                 device: torch.device = 'cpu',
+                 **kwargs):
         """
         Constructor of class RBF with zero padding basis functions
         Args:

@@ -16,7 +16,8 @@ class ProDMPBasisGenerator(NormalizedRBFBasisGenerator):
                  alpha: float = 25,
                  pre_compute_length_factor=6,
                  dtype: torch.dtype = torch.float32,
-                 device: torch.device = 'cpu'):
+                 device: torch.device = 'cpu',
+                 **kwargs):
         """
 
         Args:
