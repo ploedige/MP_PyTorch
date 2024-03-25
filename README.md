@@ -46,7 +46,7 @@ from mp_pytorch import MPFactory
 
 ```python
 # Create MP Factory
-from mp_pytorch import MPFactory
+from mp_pytorch.mp import MPFactory
 
 times: torch.Tensor # timestamps for each trajectory position
 traj: torch.Tensor # trajectory demonstration, e.g. joint positions
