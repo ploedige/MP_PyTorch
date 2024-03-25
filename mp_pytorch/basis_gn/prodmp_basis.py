@@ -14,7 +14,7 @@ class ProDMPBasisGenerator(NormalizedRBFBasisGenerator):
                  num_basis_outside: int = 0,
                  dt: float = 0.01,
                  alpha: float = 25,
-                 pre_compute_length_factor=6,
+                 pre_compute_length_factor=20,
                  dtype: torch.dtype = torch.float32,
                  device: torch.device = 'cpu',
                  **kwargs):
@@ -40,8 +40,8 @@ class ProDMPBasisGenerator(NormalizedRBFBasisGenerator):
         self.alpha = alpha
         self.scaled_dt = dt / self.phase_generator.tau
 
-        assert pre_compute_length_factor <= 6, \
-            "For numerical stability, please use a length factor <= 5."
+        # assert pre_compute_length_factor <= 6, \
+        #     "For numerical stability, please use a length factor <= 5."
         self.pre_compute_length_factor = pre_compute_length_factor
 
         self.y_1_value = None
